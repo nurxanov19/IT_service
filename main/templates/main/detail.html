@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+</head>
+<body>
+
+<div class="container">
+    {% if post.image %}
+    <img src="{{ post.image.url }}" class="post-img"
+         onerror="this.onerror=null; this.src='https://via.placeholder.com/800x400?text=No+Image';">
+    {% else %}
+        <img src="default.jpeg" class="post-img">
+    {% endif %}
+</div>
+
+    <h1 class="post-title">{{ post.title}}</h1>
+
+
+    <div class="description">
+        <h3>Technical info:</h3>
+        <p>{{ post.description }}</p>
+    </div>
+    <a href="{% url 'home' %}" class="back-btn">⬅️ Back to List</a><br>
+    <a href="{% url 'update-post' post.id %}" class="back-btn">⬅️ Update</a><br>
+</body>
+</html>
