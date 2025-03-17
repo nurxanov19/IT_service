@@ -109,7 +109,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # }
 import dj_database_url
 DATABASES = {
-        'default': dj_database_url.config(default='postgresql://it_services_db_user:HQ9riNbWcXcwJ5FZVCr6chlMxAZA3OiC@dpg-cva1bibtq21c73bpqh4g-a.frankfurt-postgres.render.com/it_services_db')
+        'default': dj_database_url.config(os.getenv('DATABASE'))
 }
 
 
